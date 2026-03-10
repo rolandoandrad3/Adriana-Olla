@@ -1,26 +1,23 @@
 export const testimonials = [
   {
-    name: 'María González',
-    role: 'Private Client',
+    name: "Carlos M.",
+    role: "Cliente desde Estados Unidos",
     message:
-      'The Legal Staff team supported me throughout the entire process. Thanks to their advice, I was able to resolve my case fairly.',
-    image:
-      'https://randomuser.me/api/portraits/women/44.jpg',
+      "La Lic. Adriana me ayudó a resolver mi proceso legal en El Salvador mientras estaba en el extranjero. Todo fue claro y profesional.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
   },
   {
-    name: 'Carlos Fernández',
-    role: 'Entrepreneur',
+    name: "María R.",
+    role: "Cliente",
     message:
-      'Excellent service — always available to answer questions and provide quick solutions. I highly recommend them.',
-    image:
-      'https://randomuser.me/api/portraits/men/35.jpg',
+      "Recibí una atención muy humana y profesional durante mi proceso de divorcio. Siempre estuvo disponible para orientarme.",
+    image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
   },
   {
-    name: 'Laura Pérez',
-    role: 'Business Owner',
+    name: "José A.",
+    role: "Cliente",
     message:
-      'I completely recommend Legal Staff. They helped me draft clear contracts and protect my business from day one.',
-    image:
-      'https://randomuser.me/api/portraits/women/68.jpg',
+      "Excelente asesoría legal. Todo el proceso fue rápido y con mucha claridad.",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
   },
 ];
