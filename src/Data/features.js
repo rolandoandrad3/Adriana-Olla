@@ -1,14 +1,18 @@
 export const features = [
   {
-    title: 'Civil Law',
-    description: 'Advisory services in civil and family law cases with proven experience.',
+    title: 'Divorcios',
+    description: 'Asesoramiento legal en casos de divorcio y separación.',
   },
   {
-    title: 'Criminal Law',
-    description: 'Defense and legal representation in criminal cases.',
+    title: 'Custodia de hijos',
+    description: 'Representación legal en procesos de custodia y bienestar de los hijos.',
   },
   {
-    title: 'Labor Law',
-    description: 'Consulting on labor disputes and employment contracts.',
+    title: 'Derecho Familiar',
+    description: 'Resolución de conflictos familiares y acuerdos legales.',
+  },
+    {
+    title: 'Notaria',
+    description: 'Autenticaciones, escrituras y elaboración de documentos legales.',
   },
 ];
