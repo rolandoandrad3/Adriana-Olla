@@ -1,82 +1,229 @@
 ---
-// src/pages/contact.astro (o donde tengas tu componente)
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <section class="contact px-6 py-20 max-w-7xl mx-auto">
-    <!-- Título centrado -->
-    <h2 class="text-[#0B2545] text-3xl md:text-4xl font-extrabold text-center uppercase mb-12">
+    <h2
+      class="text-[#0B2545] text-3xl md:text-4xl font-extrabold text-center uppercase mb-12"
+    >
       Contáctenos
     </h2>
 
-    <!-- Contenedor principal -->
     <div class="flex flex-col md:flex-row items-start gap-12">
-      <!-- Texto -->
-      <div class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center">
+      <div
+        class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center"
+      >
         <p class="text-gray-700 text-2xl font-bold leading-7 mb-6">
-          Déjanos un mensaje y nos comunicaremos contigo pronto. Nuestro equipo está
-          listo para brindarte asesoría personalizada y guiarte en cada paso
-          del proceso.
+          Déjanos un mensaje y nos comunicaremos contigo pronto. Nuestro equipo está listo para brindarte asesoría personalizada y guiarte en cada paso de tu proceso legal.
         </p>
+
         <p class="text-gray-700 text-2xl font-bold leading-7">
-          También puedes contactarnos directamente por teléfono o correo si lo prefieres.
+          También puedes contactarnos directamente por teléfono o correo.
         </p>
       </div>
 
-      <!-- Formulario -->
       <div class="w-full md:w-1/2 bg-gray-50 rounded-2xl p-8">
-        <form action="https://formsubmit.co/ale2004informacion1819@gmail.com" method="POST">
-          <!-- Campos ocultos de FormSubmit -->
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-
-          <!-- Grid de dos columnas -->
+        <form id="contactForm">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Nombre -->
             <div class="flex flex-col">
-              <label for="nombre" class="font-semibold text-[#0B2545] mb-2">Nombre</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9C74F]" required />
+              <label for="nombre" class="font-semibold text-[#0B2545] mb-2"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Tu nombre"
+                class="border border-gray-300 rounded-lg px-4 py-2"
+              />
+              <span id="errorNombre" class="text-red-500 text-sm mt-1"></span>
             </div>
 
-            <!-- Apellido -->
             <div class="flex flex-col">
-              <label for="apellido" class="font-semibold text-[#0B2545] mb-2">Apellido</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9C74F]" required />
+              <label for="apellido" class="font-semibold text-[#0B2545] mb-2"
+                >Apellido</label
+              >
+              <input
+                type="text"
+                id="apellido"
+                placeholder="Tu apellido"
+                class="border border-gray-300 rounded-lg px-4 py-2"
+              />
+              <span id="errorApellido" class="text-red-500 text-sm mt-1"></span>
             </div>
 
-            <!-- Correo -->
             <div class="flex flex-col">
-              <label for="correo" class="font-semibold text-[#0B2545] mb-2">Correo</label>
-              <input type="email" id="correo" name="correo" placeholder="you@example.com" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9C74F]" required />
+              <label for="correo" class="font-semibold text-[#0B2545] mb-2"
+                >Correo</label
+              >
+              <input
+                type="email"
+                id="correo"
+                placeholder="you@example.com"
+                class="border border-gray-300 rounded-lg px-4 py-2"
+              />
+              <span id="errorCorreo" class="text-red-500 text-sm mt-1"></span>
             </div>
 
-            <!-- Teléfono -->
             <div class="flex flex-col">
-              <label for="telefono" class="font-semibold text-[#0B2545] mb-2">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+1 555-555-5555" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#F9C74F]" />
+              <label class="font-semibold text-[#0B2545] mb-2">Teléfono</label>
+
+              <select
+                id="pais"
+                class="border border-gray-300 rounded-lg px-2 py-2 mb-2"
+              >
+                <option value="+503">🇸🇻 El Salvador (+503)</option>
+                <option value="+502">🇬🇹 Guatemala (+502)</option>
+                <option value="+504">🇭🇳 Honduras (+504)</option>
+                <option value="+505">🇳🇮 Nicaragua (+505)</option>
+                <option value="+506">🇨🇷 Costa Rica (+506)</option>
+                <option value="+507">🇵🇦 Panamá (+507)</option>
+                <option value="+52">🇲🇽 México (+52)</option>
+                <option value="+1">🇺🇸 Estados Unidos (+1)</option>
+              </select>
+
+              <input
+                type="tel"
+                id="telefono"
+                inputmode="numeric"
+                placeholder="Número"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+              />
+
+              <span id="errorTelefono" class="text-red-500 text-sm mt-1"></span>
             </div>
           </div>
 
-          <!-- Mensaje -->
           <div class="flex flex-col mt-6">
-            <label for="mensaje" class="font-semibold text-[#0B2545] mb-2">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#F9C74F] resize-none" required></textarea>
+            <label for="mensaje" class="font-semibold text-[#0B2545] mb-2"
+              >Mensaje</label
+            >
+            <textarea
+              id="mensaje"
+              rows="5"
+              placeholder="Escribe tu consulta aquí..."
+              class="border border-gray-300 rounded-lg px-4 py-3"></textarea>
+            <span id="errorMensaje" class="text-red-500 text-sm mt-1"></span>
           </div>
 
-          <!-- Botón de WhatsApp -->
           <div class="text-center md:text-right mt-4">
-            <a
-              href="https://wa.me/50361920844?text=Hola,%20quiero%20agendar%20una%20consulta%20legal"
-              target="_blank"
-              class="inline-block rounded-lg border border-[#0B2545] px-7 py-3 font-medium text-[#0B2545] hover:bg-gray-50 transition"
+            <button
+              type="submit"
+              class="inline-block rounded-lg border border-[#0B2545] px-7 py-3 font-medium text-[#0B2545]"
             >
-              Enviar
-            </a>
+              Enviar por WhatsApp
+            </button>
           </div>
+
+          <p id="successMessage" class="text-green-500 text-center mt-4 hidden">
+            Enviado correctamente. Abriendo WhatsApp...
+          </p>
         </form>
       </div>
     </div>
+
+    <script is:inline>
+      const form = document.getElementById("contactForm");
+
+      const regexSoloLetras = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$/;
+      const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      function limpiarErrores() {
+        const ids = [
+          "errorNombre",
+          "errorApellido",
+          "errorCorreo",
+          "errorTelefono",
+          "errorMensaje",
+        ];
+
+        ids.forEach((id) => {
+          const span = document.getElementById(id);
+          if (span) span.textContent = "";
+        });
+
+        const success = document.getElementById("successMessage");
+        if (success) success.classList.add("hidden");
+      }
+
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          limpiarErrores();
+
+          const nombre = document.getElementById("nombre")?.value.trim() || "";
+          const apellido =
+            document.getElementById("apellido")?.value.trim() || "";
+          const correo = document.getElementById("correo")?.value.trim() || "";
+          const telefonoNumero =
+            document.getElementById("telefono")?.value.trim() || "";
+          const pais = document.getElementById("pais")?.value || "";
+          const mensaje =
+            document.getElementById("mensaje")?.value.trim() || "";
+
+          const telefono = pais + telefonoNumero;
+
+          const setError = (id, text) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text;
+          };
+
+          let valido = true;
+
+          if (!nombre) {
+            setError("errorNombre", "El nombre es obligatorio");
+            valido = false;
+          } else if (!regexSoloLetras.test(nombre)) {
+            setError("errorNombre", "Solo letras");
+            valido = false;
+          }
+
+          if (!apellido) {
+            setError("errorApellido", "El apellido es obligatorio");
+            valido = false;
+          }
+
+          if (!correo) {
+            setError("errorCorreo", "El correo es obligatorio");
+            valido = false;
+          } else if (!regexEmail.test(correo)) {
+            setError("errorCorreo", "Correo inválido");
+            valido = false;
+          }
+
+          if (!telefonoNumero) {
+            setError("errorTelefono", "El teléfono es obligatorio");
+            valido = false;
+          } else if (!/^[0-9]{7,15}$/.test(telefonoNumero)) {
+            setError("errorTelefono", "Solo números");
+            valido = false;
+          }
+
+          if (!mensaje) {
+            setError("errorMensaje", "El mensaje es obligatorio");
+            valido = false;
+          }
+
+          if (!valido) return;
+
+          const textoWhatsApp = encodeURIComponent(
+            `Hola, quiero agendar una consulta legal.
+
+Nombre: ${nombre}
+Apellido: ${apellido}
+Correo: ${correo}
+Teléfono: ${telefono}
+Mensaje: ${mensaje}`,
+          );
+
+          const url = `https://wa.me/50361920844?text=${textoWhatsApp}`;
+
+          const success = document.getElementById("successMessage");
+          if (success) success.classList.remove("hidden");
+
+          window.open(url, "_blank");
+        });
+      }
+    </script>
   </section>
 </Layout>
