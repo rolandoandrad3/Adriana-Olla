@@ -1,23 +1,23 @@
 // data/faqs.js
 export const faqs = [
   {
-    question: 'What legal services do you offer?',
+    question: '¿Qué tipo de casos legales atiende?',
     answer:
-      'We provide advice and representation in civil, criminal, labor, and commercial law, adapting to the needs of each client.',
+      'Atendemos principalmente casos relacionados con derecho familiar, como divorcios, custodia de hijos, acuerdos legales familiares y asesoría jurídica para resolver conflictos de forma clara y profesional.',
   },
   {
-    question: 'How can I request a consultation?',
+    question: '¿Cómo puedo agendar una consulta?',
     answer:
-      'You can contact us through the form in the contact section or by phone. We will respond promptly to schedule an appointment.',
+      'Puede contactarnos a través del formulario de la página web, por teléfono o correo electrónico para programar una consulta y recibir orientación sobre su caso.',
   },
   {
-    question: 'Do you handle cases nationwide?',
+    question: '¿La información de mi caso será confidencial?',
     answer:
-      'Yes, we have a presence in various provinces and also provide virtual consultations for clients across the country.',
+      'Sí. Toda la información y documentación proporcionada por nuestros clientes se maneja con absoluta confidencialidad y respeto por su privacidad.',
   },
   {
-    question: 'What is the cost of an initial consultation?',
+    question: '¿Por qué es importante buscar asesoría legal profesional?',
     answer:
-      'The first consultation is free of obligation. Afterwards, we provide a clear quote tailored to your specific case.',
+      'Contar con la orientación de un profesional ayuda a comprender mejor sus derechos, realizar los trámites correctamente y evitar problemas legales en el futuro, asegurando que todo se maneje conforme a la ley.',
   },
 ];
